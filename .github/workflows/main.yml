@@ -30,7 +30,7 @@ jobs:
       - uses: actions/cache@v3
         name: Cache .stack-work
         with:
-          path: .stack-work
+          path: ./2022/haskell/.stack-work
           key: ${{ runner.os }}-stack-work-${{ hashFiles('stack.yaml') }}-${{ hashFiles('package.yaml') }}-${{ hashFiles('**/*.hs') }}
           restore-keys: |
             ${{ runner.os }}-stack-work-
