@@ -51,18 +51,3 @@ executable advent-of-code-haskell-exe
     , doctest
     , split
   default-language: Haskell2010
-
-test-suite advent-of-code-haskell-test
-  type: exitcode-stdio-1.0
-  main-is: Spec.hs
-  other-modules:
-      Paths_advent_of_code_haskell
-  hs-source-dirs:
-      test
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      advent-of-code-haskell
-    , base >=4.7 && <5
-    , doctest
-    , split
-  default-language: Haskell2010
