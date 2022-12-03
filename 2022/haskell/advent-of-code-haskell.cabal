@@ -26,7 +26,7 @@ source-repository head
 library
   exposed-modules:
       Day1
-      Lib
+      Day2
   other-modules:
       Paths_advent_of_code_haskell
   hs-source-dirs:

@@ -8,4 +8,4 @@ import Data.List.Split (splitOn)
 -- "24000"
 solution :: String -> String
 solution input = show $ maximum caloriesForEachElf
-    where caloriesForEachElf = fmap sum . (fmap . fmap) (read :: String -> Int) . fmap lines . splitOn "\n\n" $ input
+  where caloriesForEachElf = fmap sum . (fmap . fmap) (read :: String -> Int) . fmap lines . splitOn "\n\n" $ input
