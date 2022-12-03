@@ -1,6 +1,8 @@
 module Main (main) where
 
-import Lib
+import qualified Day1
 
+-- Receive input from stdin
+-- Tips for macOS: pbpaste | stack run
 main :: IO ()
-main = someFunc
+main = interact Day1.solution
