@@ -9,7 +9,7 @@ import Data.List.Split (splitOn)
 solution :: String -> String
 solution input = show $ sum scores
   where scores = (fmap roundScore . fmap extractRoundHandShape . lines) input
-        extractRoundHandShape line = let [opponent, self] = splitOn " " line in (read self :: HandShape, read opponent :: HandShape)
+        extractRoundHandShape line = let [opponent, self] = splitOn " " line in (read self, read opponent)
 
 data HandShape = Rock | Paper | Scissors deriving (Eq, Show)
 
