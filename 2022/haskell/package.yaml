@@ -24,6 +24,7 @@ dependencies:
 - containers
 - split
 - doctest
+- cmdargs
 
 ghc-options:
 - -Wall
