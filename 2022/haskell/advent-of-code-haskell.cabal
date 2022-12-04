@@ -27,6 +27,7 @@ library
   exposed-modules:
       Day1
       Day2
+      Day3
   other-modules:
       Paths_advent_of_code_haskell
   hs-source-dirs:
@@ -34,6 +35,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , containers
     , doctest
     , split
   default-language: Haskell2010
@@ -48,6 +50,7 @@ executable advent-of-code-haskell-exe
   build-depends:
       advent-of-code-haskell
     , base >=4.7 && <5
+    , containers
     , doctest
     , split
   default-language: Haskell2010
