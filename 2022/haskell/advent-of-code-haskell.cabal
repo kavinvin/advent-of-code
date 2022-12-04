@@ -28,7 +28,10 @@ library
       Day1Part1
       Day1Part2
       Day2Part1
+      Day2Part2
       Day3Part1
+      Day4Part1
+      Day4Part2
   other-modules:
       Paths_advent_of_code_haskell
   hs-source-dirs:

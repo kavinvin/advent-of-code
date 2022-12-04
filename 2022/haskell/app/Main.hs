@@ -8,6 +8,8 @@ import qualified Day1Part1
 import qualified Day1Part2
 import qualified Day2Part1
 import qualified Day3Part1
+import qualified Day4Part1
+import qualified Day4Part2
 import qualified Data.Map as M
 
 data SolutionArgs = SolutionArgs { day :: Int, part :: Int } deriving (Show, Data, Typeable)
@@ -20,7 +22,10 @@ solution (SolutionArgs day part) = solutionMap M.! (day, part)
   where solutionMap = M.fromList [ ((1, 1), Day1Part1.solution)
                                  , ((1, 2), Day1Part2.solution)
                                  , ((2, 1), Day2Part1.solution)
-                                 , ((3, 1), Day3Part1.solution) ]
+                                 , ((3, 1), Day3Part1.solution)
+                                 , ((4, 1), Day4Part2.solution)
+                                 , ((4, 2), Day4Part2.solution)
+                                 ]
 
 -- Receive input from stdin
 -- Tips for macOS: pbpaste | stack run -- --day 1
