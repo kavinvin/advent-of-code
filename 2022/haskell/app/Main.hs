@@ -28,7 +28,7 @@ solution (SolutionArgs day part) = solutionMap M.! (day, part)
                                  ]
 
 -- Receive input from stdin
--- Tips for macOS: pbpaste | stack run -- --day 1
+-- Tips for macOS: pbpaste | stack run -- --day 1 --part 1
 main :: IO ()
 -- main = interact Day3.solution
 main = do
