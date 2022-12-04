@@ -23,7 +23,7 @@ solution (SolutionArgs day part) = solutionMap M.! (day, part)
                                  , ((1, 2), Day1Part2.solution)
                                  , ((2, 1), Day2Part1.solution)
                                  , ((3, 1), Day3Part1.solution)
-                                 , ((4, 1), Day4Part2.solution)
+                                 , ((4, 1), Day4Part1.solution)
                                  , ((4, 2), Day4Part2.solution)
                                  ]
 
