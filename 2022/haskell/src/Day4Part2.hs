@@ -1,10 +1,12 @@
 module Day4Part2 (solution) where
 
+import Data.List (intersect)
 import Data.List.Split (splitOn)
-import Data.List (isSubsequenceOf, length, intersect)
 
+count :: (a -> Bool) -> [a] -> Int
 count f = length . filter f
 
+overlap :: Eq a => [a] -> [a] -> Bool
 overlap xs ys = (length $ xs `intersect` ys) > 0
 
 -- |
@@ -12,6 +14,7 @@ overlap xs ys = (length $ xs `intersect` ys) > 0
 -- "4"
 solution :: String -> String
 solution = show . count (== True) . fmap compute . lines
-  where splitLine line = let [first, second] = splitOn "," line in (toRange first, toRange second)
-        toRange word = let [from, to] = splitOn "-" word in [(read from :: Int)..(read to :: Int)]
-        compute line = let (first, second) = splitLine line in first `overlap` second
+  where
+    splitLine line = let [first, second] = splitOn "," line in (toRange first, toRange second)
+    toRange word = let [from, to] = splitOn "-" word in [(read from :: Int) .. (read to :: Int)]
+    compute line = let (first, second) = splitLine line in first `overlap` second

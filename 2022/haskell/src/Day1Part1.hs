@@ -1,6 +1,5 @@
 module Day1Part1 (solution) where
 
-import Data.List (sort)
 import Data.List.Split (splitOn)
 
 -- | Day 1: Calorie Counting
@@ -9,6 +8,7 @@ import Data.List.Split (splitOn)
 -- "24000"
 solution :: String -> String
 solution input = show maxCalories
-  where maxCalories = maximum . fmap caloriesPerElf . fmap lines . splitOn elfSeparator $ input
-        caloriesPerElf = sum . fmap read
-        elfSeparator = "\n\n"
+  where
+    maxCalories = maximum . fmap caloriesPerElf . fmap lines . splitOn elfSeparator $ input
+    caloriesPerElf = sum . fmap read
+    elfSeparator = "\n\n"

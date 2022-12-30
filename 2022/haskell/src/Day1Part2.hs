@@ -9,7 +9,8 @@ import Data.List.Split (splitOn)
 -- "45000"
 solution :: String -> String
 solution input = show max3Calories
-  where max3Calories = sumTop3 . fmap caloriesPerElf . fmap lines . splitOn elfSeparator $ input
-        caloriesPerElf = sum . fmap read
-        elfSeparator = "\n\n"
-        sumTop3 = sum . take 3 . reverse . sort
+  where
+    max3Calories = sumTop3 . fmap caloriesPerElf . fmap lines . splitOn elfSeparator $ input
+    caloriesPerElf = sum . fmap read
+    elfSeparator = "\n\n"
+    sumTop3 = sum . take 3 . reverse . sort

@@ -8,8 +8,9 @@ import Data.List.Split (splitOn)
 -- "15"
 solution :: String -> String
 solution input = show $ sum scores
-  where scores = (fmap roundScore . fmap extractRoundHandShape . lines) input
-        extractRoundHandShape line = let [opponent, self] = splitOn " " line in (read self, read opponent)
+  where
+    scores = (fmap roundScore . fmap extractRoundHandShape . lines) input
+    extractRoundHandShape line = let [opponent, self] = splitOn " " line in (read self, read opponent)
 
 data HandShape = Rock | Paper | Scissors deriving (Eq, Show)
 
@@ -18,14 +19,15 @@ data HandShape = Rock | Paper | Scissors deriving (Eq, Show)
 -- Rock
 instance Read HandShape where
   readsPrec _ input = [(handShape, rest)]
-    where (first:rest) = input
-          handShape = case first of
-                        'A' -> Rock
-                        'B' -> Paper
-                        'C' -> Scissors
-                        'X' -> Rock
-                        'Y' -> Paper
-                        'Z' -> Scissors
+    where
+      (first : rest) = input
+      handShape = case first of
+        'A' -> Rock
+        'B' -> Paper
+        'C' -> Scissors
+        'X' -> Rock
+        'Y' -> Paper
+        'Z' -> Scissors
 
 -- |
 -- >>> handShapeScore Rock
@@ -43,11 +45,12 @@ outcomeScore (self, opponent)
   | self == opponent = draw
   | (self, opponent) `elem` winningPairs = win
   | (self, opponent) `elem` losingPairs = lose
-  where win = 6
-        draw = 3
-        lose = 0
-        winningPairs = [(Rock, Scissors), (Paper, Rock), (Scissors, Paper)]
-        losingPairs = [(Rock, Paper), (Paper, Scissors), (Scissors, Rock)]
+  where
+    win = 6
+    draw = 3
+    lose = 0
+    winningPairs = [(Rock, Scissors), (Paper, Rock), (Scissors, Paper)]
+    losingPairs = [(Rock, Paper), (Paper, Scissors), (Scissors, Rock)]
 
 -- |
 -- >>> roundScore (Rock, Scissors)
